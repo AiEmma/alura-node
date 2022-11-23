@@ -55,6 +55,12 @@ static apagarLivro = (req, res) => {
         }
     })
 }
+static buscarLivroEditora = (req, res) => {
+    const editora= req.query.editora
+    livros.find({'editora': editora}, {}, (err, livros) =>{
+        res.status(200).send(livros)
+    })
+}
 
 }
 export default LivroController
